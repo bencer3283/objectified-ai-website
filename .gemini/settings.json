@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "figma_desktop": {
+      "httpUrl": "http://127.0.0.1:3845/mcp"
+    },
+    "chakra-ui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@chakra-ui/react-mcp"
+      ]
+    }
+  }
+}
