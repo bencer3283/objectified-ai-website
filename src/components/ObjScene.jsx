@@ -1,36 +1,51 @@
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { useLoader } from '@react-three/fiber';
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useRef } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { Suspense, useRef, useEffect, useMemo } from "react";
+import * as THREE from "three";
+import { Box } from "@chakra-ui/react";
 
-const Model = ({objName}) => {
-  const materials = useLoader(MTLLoader, `/objs/${objName}.mtl`);
-  const obj = useLoader(OBJLoader, `/objs/${objName}.obj`, (loader) => {
-    materials.preload();
-    loader.setMaterials(materials);
-  });
-  const myObj = useRef()
+const Model = ({ objName, objScale }) => {
+  const obj = useLoader(OBJLoader, `/objs/${objName}.obj`);
+  const myObj = useRef();
+
+  // Apply material to all meshes in the OBJ
+  useEffect(() => {
+    obj.traverse((child) => {
+      if (child.isMesh) {
+        child.material = new THREE.MeshStandardMaterial({
+          color: "#e0e0e0",
+          metalness: 0.2,
+          roughness: 0.3,
+        });
+      }
+    });
+  }, [obj]);
 
   useFrame(({ clock }) => {
-    const a = clock.getElapsedTime();
-    myObj.current.rotation.y = a;
+    if (myObj.current) {
+      myObj.current.rotation.y = clock.getElapsedTime() * 0.5;
+    }
   });
 
   console.log(obj);
-  return <primitive object={obj} scale={0.6} ref={myObj}/>;
+  return <primitive object={obj} scale={objScale} position={[0, -1, -4]} ref={myObj}/>;
 };
 
-export const ObjScene = ({obj}) => {
+export const ObjScene = ({ obj, scale = 0.3, ...props }) => {
   return (
-    <div>
-      <Canvas>
+    <Box w='full' h={{ base: "30vh", md: "60vh" }} {...props}>
+      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+        {/* Lights */}
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+        <pointLight position={[-5, -5, -5]} intensity={0.5} />
+        <spotLight position={[0, 10, 0]} intensity={1} angle={0.3} penumbra={1} />
+
         <Suspense fallback={null}>
-          <Model objName={obj}/>
-          {/* <OrbitControls /> */}
+          <Model objName={obj} objScale={scale} />
         </Suspense>
       </Canvas>
-    </div>
+    </Box>
   );
-}
+};

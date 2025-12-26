@@ -17,7 +17,13 @@ export default function Home() {
         justifyContent="center"
         overflow="hidden"
         p={4}
+        position="relative"
       >
+        <Flex direction={'row'} gapX={'1vw'} position="absolute" mt={"40vh"} top={0} left={0} w="full" h="full" zIndex={0}>
+          <ObjScene obj={"motorized-6col"} scale={0.35}/>
+          <ObjScene obj={"cd_player"} scale={0.15}/>
+          <ObjScene obj={"frame"} scale={0.08}/>
+        </Flex>
         <Flex
           direction="column"
           color="white"
@@ -28,6 +34,8 @@ export default function Home() {
           gap={{ base: 8, lg: 16 }} // Gap between the two lines
           position="relative"
           pt={{ base: "8vh", lg: "16vh" }}
+          zIndex={10}
+          pointerEvents="none"
         >
           <Text
             fontFamily="var(--font-space-grotesk)"
@@ -65,7 +73,6 @@ export default function Home() {
               </Span>
             </Text>
           </motion.div>
-          <ObjScene obj={"motorized-6col"}/>
         </Flex>
       </Box>
       <Words />
