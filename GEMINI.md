@@ -54,3 +54,4 @@ This is a web application built with [Next.js](https://nextjs.org/) (App Router)
 ## Gemini Added Memories
 - use ChakraUI components whenever possible
 - be consistent on the components used to architect the layout
+- minimize modification to existing codes when implementing new content
