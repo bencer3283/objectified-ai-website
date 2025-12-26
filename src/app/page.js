@@ -3,6 +3,7 @@
 import { Box, Flex, Span, Text } from "@chakra-ui/react";
 import { motion } from "motion/react";
 import { Words } from "@/components/Words";
+import { ObjScene } from "@/components/ObjScene";
 
 export default function Home() {
   return (
@@ -64,7 +65,7 @@ export default function Home() {
               </Span>
             </Text>
           </motion.div>
-          
+          <ObjScene obj={"motorized-6col"}/>
         </Flex>
       </Box>
       <Words />

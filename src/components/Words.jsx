@@ -151,7 +151,7 @@ export const Words = () => {
         />
 
         {/* Conclusion */}
-        <Box pt={"40vh"}>
+        <Box pt={"40vh"} pb={"40vh"}>
            <Text
             fontFamily="var(--font-space-grotesk)"
             fontWeight="bold"
@@ -177,7 +177,7 @@ export const Words = () => {
           <Text
             fontFamily="var(--font-space-grotesk)"
             fontWeight="bold"
-            fontSize={{ base: "4xl", md: "6xl", lg: "96px" }}
+            fontSize={{ base: "3xl", md: "5xl", lg: "84px" }}
             lineHeight="1.1"
             mt={4}
             pt={{base: "4vh", lg: "6vh"}}
