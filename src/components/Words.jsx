@@ -158,7 +158,7 @@ export const Words = () => {
             fontSize={{ base: "3xl", md: "5xl", lg: "84px" }}
             lineHeight="1.1"
           >
-            people doesn’t seem to realize the{" "}
+            people don't seem to realize the{" "}
             <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="normal">limitations</Span>
             {" "}and{" "}
             <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="normal">issues</Span>

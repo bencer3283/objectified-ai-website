@@ -19,7 +19,7 @@ export default function Home() {
         p={4}
         position="relative"
       >
-        <Flex direction={'row'} gapX={'1vw'} position="absolute" mt={"40vh"} top={0} left={0} w="full" h="full" zIndex={0}>
+        <Flex direction={{base: 'column', md: 'row'}} position="absolute" alignSelf={'center'} mt={{base:"5vh", md: "32vh"}} top={0} left={0} w="full" h="full" zIndex={0}>
           <ObjScene obj={"motorized-6col"} scale={0.35}/>
           <ObjScene obj={"cd_player"} scale={0.15}/>
           <ObjScene obj={"frame"} scale={0.08}/>
