@@ -33,7 +33,7 @@ const Model = () => {
     return <primitive object={obj} scale={0.35} position={[-1, -1.5, -4.5]} rotation={[-1, 0, -0.8]} ref={myObj} />;
 };
 
-export default function Abacus() {
+export default function Cd() {
     return (
         <>
             <Box
