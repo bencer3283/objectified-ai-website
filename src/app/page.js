@@ -3,6 +3,7 @@
 import { Box, Flex, Span, Text } from "@chakra-ui/react";
 import { motion } from "motion/react";
 import { Words } from "@/components/Words";
+import { WordsInterface } from "@/components/WordsInterface";
 import { ObjScene } from "@/components/ObjScene";
 
 export default function Home() {
@@ -44,7 +45,7 @@ export default function Home() {
             ml={{ base: "8%", lg: "5%" }}
           >
             Design for the AI{" "}
-            <Span fontFamily="var(--font-ibm-plex-serif)" fontWeight="semibold" fontStyle="normal">
+            <Span fontFamily="var(--font-ibm-plex-serif)" fontWeight="semibold" fontStyle='italic'>
               we have
             </Span>
             ,
@@ -52,13 +53,14 @@ export default function Home() {
           
           <motion.div initial={{
             opacity: 0,
-            y: 120
-          }} animate={{
+            y: 60
+          }} whileInView={{
             opacity: 1,
             y: 0
           }} transition={{
-            duration: 1.33,
-            ease: "backIn"
+            duration: 0.5,
+            delay: 0.25,
+            ease: 'easeInOut'
           }}>
             <Text
               fontFamily="var(--font-space-grotesk)"
@@ -68,7 +70,7 @@ export default function Home() {
               mr={{ base: "8%", lg: "5%" }}
             >
               not the one{" "}
-              <Span fontFamily="var(--font-ibm-plex-serif)" fontWeight="semibold" fontStyle="normal">
+              <Span fontFamily="var(--font-ibm-plex-serif)" fontWeight="semibold" fontStyle="italic">
                 we envision.
               </Span>
             </Text>
@@ -76,6 +78,7 @@ export default function Home() {
         </Flex>
       </Box>
       <Words />
+      <WordsInterface />
     </>
   );
 }

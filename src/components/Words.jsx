@@ -9,7 +9,7 @@ const SectionRow = ({ label, items, images, ...props }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % items.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [items.length]);
 
@@ -42,8 +42,9 @@ const SectionRow = ({ label, items, images, ...props }) => {
               <Text
                 fontFamily="var(--font-ibm-plex-serif)"
                 fontWeight="semibold"
+                fontStyle={'italic'}
                 fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
-                lineHeight="1"
+                lineHeight='1'
               >
                 {items[index]}
               </Text>
@@ -112,7 +113,7 @@ export const Words = () => {
           maxW="1650px"
         >
           the AI we have now is dictated by the paradigm of{" "}
-          <Span fontFamily="var(--font-ibm-plex-serif)">foundational LLMs</Span>,
+          <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle={'italic'}>foundational LLMs</Span>,
         </Text>
 
         {/* Section 1 */}
@@ -159,9 +160,9 @@ export const Words = () => {
             lineHeight="1.1"
           >
             people don't seem to realize the{" "}
-            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="normal">limitations</Span>
+            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic">limitations</Span>
             {" "}and{" "}
-            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="normal">issues</Span>
+            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic">issues</Span>
             {" "}of LLMs,
           </Text>
           <motion.div initial={{
@@ -171,8 +172,9 @@ export const Words = () => {
             opacity: 1,
             y: 0
           }} transition={{
-            duration: 1.33,
-            ease: "backIn"
+            duration: 0.5,
+            delay: 0.25,
+            ease: "easeInOut"
           }}>
           <Text
             fontFamily="var(--font-space-grotesk)"
@@ -183,7 +185,7 @@ export const Words = () => {
             pt={{base: "4vh", lg: "6vh"}}
           >
             and I think it’s because we are designing the{" "}
-            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="normal">wrong interface</Span>
+            <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic">wrong interface</Span>
           </Text>
           </motion.div>
         </Box>
