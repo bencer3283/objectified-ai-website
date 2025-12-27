@@ -10,7 +10,7 @@ import { Suspense, useRef, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 
 const Model = () => {
-    const obj = useLoader(OBJLoader, "/objs/motorized-6col.obj");
+    const obj = useLoader(OBJLoader, "/objs/cd_player.obj");
     const myObj = useRef();
 
     // Apply material to all meshes in the OBJ
@@ -30,7 +30,7 @@ const Model = () => {
     }, [obj]);
 
     console.log(obj);
-    return <primitive object={obj} scale={0.7} position={[-2, -0.6, -4]} rotation={[-0.8, 0, 0]} ref={myObj} />;
+    return <primitive object={obj} scale={0.35} position={[-1, -1.5, -4.5]} rotation={[-1, 0, -0.8]} ref={myObj} />;
 };
 
 export default function Abacus() {
@@ -81,7 +81,7 @@ export default function Abacus() {
                         ml={{ base: "8%", lg: "5%" }}
                         textShadow="0 2px 10px rgba(0,0,0,0.8)"
                     >
-                        Giving LLM internal representation<br /><Span fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}>via embedding</Span>
+                        Compartmentalized LLMs
 
                     </Text>
                     <Box mt={'40vh'}>
@@ -93,13 +93,13 @@ export default function Abacus() {
                             alignSelf={{ base: "flex-start", lg: "flex-start" }}
                             ml={{ base: "8%", lg: "5%" }}
                             fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
-                        >Embedding is the numerical representation of the meaning of tokens (words).</Text>
+                        >What if every model is small, efficient and very application-specific?</Text>
                     </Box>
 
                     <Box mt={'10vh'} minH={'80vh'} position="relative" display="flex" justifyContent="center" alignItems="center" zIndex={1}>
                         <Box
                             as="video"
-                            src="/videos/abacus-1.mov"
+                            src="/videos/discman-1.mov"
                             autoPlay
                             loop
                             muted
@@ -130,7 +130,46 @@ export default function Abacus() {
                                     textShadow="0 2px 10px rgba(0,0,0,0.8)"
                                     p={8}
                                 >
-                                    What if we give users an interface to adjust the embedding of each word to their unique internal representation?
+                                    They all live on a CD disc and is loaded by the user depending on the task.
+                                </Text></Flex>
+                        </motion.div>
+
+                    </Box>
+                    <Box mt={'10vh'} minH={'80vh'} position="relative" display="flex" justifyContent="center" alignItems="center" zIndex={1}>
+                        <Box
+                            as="video"
+                            src="/videos/discman-2.mov"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            width="100%"
+                            borderRadius="3xl"
+                            boxShadow="2xl"
+                        />
+                        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.8 }}>
+                            <Flex
+                                position="absolute"
+                                top={0}
+                                left={0}
+                                w="full"
+                                h="full"
+                                justifyContent="left"
+                                alignItems="top"
+                                zIndex={10}
+                                p={4}
+                            >
+
+                                <Text
+                                    fontFamily="var(--font-space-grotesk)"
+                                    fontWeight="bold"
+                                    fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
+                                    textAlign="left"
+                                    color="white"
+                                    textShadow="0 2px 10px rgba(0,0,0,0.8)"
+                                    p={8}
+                                >
+                                    even within one task, you may need to swap several models
                                 </Text></Flex>
                         </motion.div>
 
@@ -143,32 +182,9 @@ export default function Abacus() {
                         color="white"
                         p={8}
                     >
-                        Models can start to actually understand us human. If they are smaller and can be run locally, it also represent a more personal, intimate human-AI relationship.
+                        Some of them can stay completely offline and private, others can be exposed to the internet.
                     </Text>
-                    <Box mt={'20vh'}>
-                        <Text
-                            fontFamily="var(--font-space-grotesk)"
-                            fontWeight="bold"
-                            fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
-                            textAlign="left"
-                            color="white"
-                            p={8}
-                        >
-                            the interface also shows something physically making computations, showing the <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle={'italic'}>tangible</Span> aspect of AI as opposed to a invisible, digital process and making the interaction more <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle={'italic'}>intentional</Span>.
-                        </Text>
-                    </Box>
-                    <Box
-                        as="video"
-                        src="/videos/abacus-2.mov"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        width="100%"
-                        borderRadius="3xl"
-                        boxShadow="2xl"
-                        mt={'20vh'}
-                    />
+                    
                     {/* Call to Action */}
                     <motion.div
                         style={{ display: 'inline-block', pointerEvents: 'auto' }}
