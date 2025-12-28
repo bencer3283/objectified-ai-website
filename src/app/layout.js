@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Space_Grotesk, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
+import { NavBar } from "@/components/NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +22,8 @@ const spaceGrotesk = Space_Grotesk({
 const ibmPlexSerif = IBM_Plex_Serif({
   variable: "--font-ibm-plex-serif",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["600", "400"],
+  style: ['normal', 'italic'],
 });
 
 export const metadata = {
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${ibmPlexSerif.variable}`}>
         <Provider>
+          <NavBar />
           {children}
         </Provider>
       </body>

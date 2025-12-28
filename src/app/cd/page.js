@@ -130,7 +130,7 @@ export default function Cd() {
                                     textShadow="0 2px 10px rgba(0,0,0,0.8)"
                                     p={8}
                                 >
-                                    They all live on a CD disc and is loaded by the user depending on the task.
+                                    They all live on CD discs and are loaded by the user depending on the task.
                                 </Text></Flex>
                         </motion.div>
 
@@ -201,7 +201,7 @@ export default function Cd() {
                                 cursor="pointer"
                                 display="inline-block"
                             >
-                                explore the next object →
+                                <a href="/matrix">explore the next object →</a>
                             </Text>
                         </Box>
                     </motion.div>

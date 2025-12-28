@@ -54,7 +54,7 @@ export default function Home() {
           <motion.div initial={{
             opacity: 0,
             y: 60
-          }} whileInView={{
+          }} animate={{
             opacity: 1,
             y: 0
           }} transition={{

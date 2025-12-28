@@ -185,7 +185,7 @@ export default function Abacus() {
                                 cursor="pointer"
                                 display="inline-block"
                             >
-                                explore the next object →
+                                <a href="/cd">explore the next object →</a>
                             </Text>
                         </Box>
                     </motion.div>

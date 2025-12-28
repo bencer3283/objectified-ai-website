@@ -4,6 +4,32 @@ import { Flex, Text, Box, Span, SimpleGrid, VStack, HStack } from "@chakra-ui/re
 import { motion } from "motion/react";
 import Image from "next/image";
 
+const MotionFlex = motion.create(Flex);
+const MotionText = motion.create(Text);
+const MotionBox = motion.create(Box);
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        },
+    },
+};
+
 const StatsBlock = ({ stats }) => (
     <VStack align="start" spacing={0} fontFamily="var(--font-space-grotesk)" fontWeight="semibold" fontSize={{ base: "xl", lg: "32px" }} color="whiteAlpha.900">
         {stats.map((stat, index) => (
@@ -13,40 +39,59 @@ const StatsBlock = ({ stats }) => (
 );
 
 const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = false }) => (
-    <Flex direction={{ base: "column", xl: reverse ? "row-reverse" : "row" }} w="full" gap={10} align="center" py={20}>
+    <MotionFlex
+        direction={{ base: "column", xl: reverse ? "row-reverse" : "row" }}
+        w="full"
+        gap={10}
+        align="center"
+        py={20}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+    >
         <Flex direction="column" flex={1} gap={10} align="flex-start" h="full" justify="space-between">
-            <Text
+            <MotionText
+                variants={itemVariants}
                 fontFamily="var(--font-space-grotesk)"
                 fontWeight="bold"
                 fontSize={{ base: "4xl", md: "6xl", lg: "80px" }}
                 lineHeight="1"
             >
                 {title}
-            </Text>
+            </MotionText>
             
-            <Box py={10}>
+            <MotionBox py={10} variants={itemVariants}>
                 <StatsBlock stats={stats} />
-            </Box>
+            </MotionBox>
 
-            <Text
+            <MotionText
+                variants={itemVariants}
                 fontFamily="var(--font-space-grotesk)"
                 fontWeight="bold"
                 fontSize={{ base: "4xl", md: "6xl", lg: "80px" }}
                 lineHeight="1"
             >
                 {paramSize}
-            </Text>
+            </MotionText>
         </Flex>
 
-        <Box flex={1} w="full" position="relative" h={{ base: "400px", lg: "800px" }} overflow="hidden" borderRadius="2xl">
+        <MotionBox 
+            flex={1} 
+            w="full" 
+            position="relative" 
+            h={{ base: "400px", lg: "800px" }} 
+            overflow="hidden" 
+            borderRadius="2xl"
+            variants={itemVariants}
+        >
             <Image 
                 src={imageSrc} 
                 alt={imageAlt} 
                 fill 
                 style={{ objectFit: "cover" }}
             />
-        </Box>
-    </Flex>
+        </MotionBox>
+    </MotionFlex>
 );
 
 export default function Matrix() {

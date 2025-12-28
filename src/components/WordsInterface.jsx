@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Span, VStack, SimpleGrid } from "@chakra-ui/react";
 import { motion } from "motion/react";
+import { Link } from 'next/link';
 
 const MotionSimpleGrid = motion.create(SimpleGrid);
 const MotionText = motion.create(Text);
@@ -31,7 +32,6 @@ export const WordsInterface = () => {
     <Box
       bg="#545252"
       color="white"
-      py={20}
       px={{ base: 4, lg: 20 }}
       w="full"
       overflow="hidden"
@@ -67,7 +67,7 @@ export const WordsInterface = () => {
           
           <MotionSimpleGrid
             columns={{ base: 1, lg: 3 }}
-            spacing={'2vw'}
+            spacing={'12vw'}
             w="full"
             variants={containerVariants}
             initial="hidden"
@@ -80,7 +80,7 @@ export const WordsInterface = () => {
               fontSize={{ base: "xl", md: "2xl", lg: "48px" }}
               lineHeight="1.1"
             >
-              the limitation/capability of the technology
+              the limitation of the technology
             </MotionText>
             <MotionText
               variants={itemVariants}
@@ -147,12 +147,13 @@ export const WordsInterface = () => {
         </Text>
         </Box>
         {/* Paragraph 6 */}
-        <Box minH={'80vh'}>
+        <Box minH={'60vh'}>
         <Text
           fontFamily="var(--font-space-grotesk)"
           fontWeight="semibold"
           fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
           lineHeight="1.1"
+          pb={'3vh'}
         >
           so I designed a few small objects to illustrate some alternative ways we can interact with LLMs......
         </Text>
@@ -171,7 +172,7 @@ export const WordsInterface = () => {
               cursor="pointer"
               display="inline-block"
             >
-              explore the first object →
+              <a href="/abacus">explore the first object →</a>
             </Text>
         </motion.div>
         </Box>
