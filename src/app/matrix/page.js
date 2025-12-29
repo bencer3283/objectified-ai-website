@@ -43,7 +43,7 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
         direction={{ base: "column", xl: reverse ? "row-reverse" : "row" }}
         w="full"
         gap={10}
-        align="center"
+        align={{ base: "stretch", xl: "center" }}
         py={20}
         variants={containerVariants}
         initial="hidden"
@@ -76,11 +76,12 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
         </Flex>
 
         <MotionBox 
-            flex={1} 
-            w="full" 
+            flex={{ base: "none", xl: 1 }}
+            w="full"
             position="relative" 
-            h={{ base: "400px", lg: "800px" }} 
-            overflow="hidden" 
+            h={{ base: "60vh", lg: "80vh" }} 
+            maxW={{ base: '100%', xl: '40vw' }}
+            overflow='visible'
             borderRadius="2xl"
             variants={itemVariants}
         >
@@ -103,7 +104,7 @@ export default function Matrix() {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            overflow="hidden"
+            overflow="visible"
             p={4}
             color="white"
         >
@@ -124,7 +125,7 @@ export default function Matrix() {
                     The Growing Matrix
                 </Text>
 
-                <Box minH={'80vh'} position="relative" w="full" borderRadius="3xl" overflow="hidden">
+                <Box minH={'80vh'} position="relative" w="full" borderRadius="3xl" overflow="visible">
                      <Box
                             as="video"
                             src="/videos/matrix.mp4"
@@ -223,7 +224,7 @@ export default function Matrix() {
                             </Box>
                         </Flex>
                         
-                        <Box w="full" h={{ base: "300px", md: "600px", lg: "900px" }} position="relative" borderRadius="2xl" overflow="hidden">
+                        <Box w="full" h={{ base: "300px", md: "600px", lg: "900px" }} position="relative" borderRadius="2xl" overflow="visible">
                             <Image 
                                 src="/images/matrix-3.png" 
                                 alt="Debugging software" 

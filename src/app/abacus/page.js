@@ -8,6 +8,7 @@ import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 import { Suspense, useRef, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Model = () => {
     const obj = useLoader(OBJLoader, "/objs/motorized-6col.obj");
@@ -185,7 +186,7 @@ export default function Abacus() {
                                 cursor="pointer"
                                 display="inline-block"
                             >
-                                <a href="/cd">explore the next object →</a>
+                                <Link href="/cd">explore the next object →</Link>
                             </Text>
                         </Box>
                     </motion.div>

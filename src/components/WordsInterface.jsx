@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Span, VStack, SimpleGrid } from "@chakra-ui/react";
 import { motion } from "motion/react";
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 const MotionSimpleGrid = motion.create(SimpleGrid);
 const MotionText = motion.create(Text);
@@ -128,8 +128,9 @@ export const WordsInterface = () => {
           instead, the interface of chatbot assumes that we can interact with LLMs as if we are interacting with humans
           <br />
           <motion.div initial={{opacity: 0, y: 60}} whileInView={{opacity: 1, y: 0}} transition={{duration: 0.25, delay: 1.33}}>
+            <Box my={'6vh'}>
           <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic">chatbot is a human-human interface</Span>
-          , not a human-computer interface
+          , not a human-computer interface</Box>
           </motion.div>
         </Text>
         </Box>
@@ -172,7 +173,7 @@ export const WordsInterface = () => {
               cursor="pointer"
               display="inline-block"
             >
-              <a href="/abacus">explore the first object →</a>
+              <Link href="/abacus">explore the first object →</Link>
             </Text>
         </motion.div>
         </Box>

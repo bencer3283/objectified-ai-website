@@ -8,6 +8,7 @@ import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 import { Suspense, useRef, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Model = () => {
     const obj = useLoader(OBJLoader, "/objs/cd_player.obj");
@@ -201,7 +202,7 @@ export default function Cd() {
                                 cursor="pointer"
                                 display="inline-block"
                             >
-                                <a href="/matrix">explore the next object →</a>
+                                <Link href="/matrix">explore the next object →</Link>
                             </Text>
                         </Box>
                     </motion.div>
