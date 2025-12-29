@@ -40,10 +40,10 @@ const StatsBlock = ({ stats }) => (
 
 const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = false }) => (
     <MotionFlex
-        direction={{ base: "column", xl: reverse ? "row-reverse" : "row" }}
+        direction={{ base: "column", md: reverse ? "row-reverse" : "row" }}
         w="full"
         gap={10}
-        align={{ base: "stretch", xl: "center" }}
+        align={{ base: "stretch", md: "center" }}
         py={20}
         variants={containerVariants}
         initial="hidden"
@@ -54,7 +54,7 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
                 variants={itemVariants}
                 fontFamily="var(--font-space-grotesk)"
                 fontWeight="bold"
-                fontSize={{ base: "4xl", md: "6xl", lg: "80px" }}
+                fontSize={{ base: "3xl", md: "5xl", lg: "80px" }}
                 lineHeight="1"
             >
                 {title}
@@ -68,7 +68,7 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
                 variants={itemVariants}
                 fontFamily="var(--font-space-grotesk)"
                 fontWeight="bold"
-                fontSize={{ base: "4xl", md: "6xl", lg: "80px" }}
+                fontSize={{ base: "3xl", md: "5xl", lg: "80px" }}
                 lineHeight="1"
             >
                 {paramSize}
@@ -76,11 +76,10 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
         </Flex>
 
         <MotionBox 
-            flex={{ base: "none", xl: 1 }}
+            flex={{ base: "none", md: 1 }}
             w="full"
             position="relative" 
-            h={{ base: "60vh", lg: "80vh" }} 
-            maxW={{ base: '100%', xl: '40vw' }}
+            h={{ base: "60vh", md: '90vh' }} 
             overflow='visible'
             borderRadius="2xl"
             variants={itemVariants}
@@ -89,7 +88,7 @@ const MatrixSection = ({ title, stats, paramSize, imageSrc, imageAlt, reverse = 
                 src={imageSrc} 
                 alt={imageAlt} 
                 fill 
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: 'contain' }}
             />
         </MotionBox>
     </MotionFlex>
@@ -203,6 +202,7 @@ export default function Matrix() {
                                 >
                                     debugging software project
                                 </Text>
+                                <Box mt={'8vh'}>
                                 <Text
                                     fontFamily="var(--font-space-grotesk)"
                                     fontWeight="bold"
@@ -211,6 +211,7 @@ export default function Matrix() {
                                 >
                                     192B parameters
                                 </Text>
+                                </Box>
                             </VStack>
                             
                             <Box pt={2}>
@@ -224,7 +225,7 @@ export default function Matrix() {
                             </Box>
                         </Flex>
                         
-                        <Box w="full" h={{ base: "300px", md: "600px", lg: "900px" }} position="relative" borderRadius="2xl" overflow="visible">
+                        <Box w="80vw" h={{ base: "50vh", md: "70vh"}} position="relative" borderRadius="2xl" overflow="visible">
                             <Image 
                                 src="/images/matrix-3.png" 
                                 alt="Debugging software" 
