@@ -55,3 +55,5 @@ This is a web application built with [Next.js](https://nextjs.org/) (App Router)
 - use ChakraUI components whenever possible
 - be consistent on the components used to architect the layout
 - minimize modification to existing codes when implementing new content
+- reuse consistently the same text style, layout padding or margin for similar content
+- respect manual modification made in the code by human and do not attempt to change them between assign tasks

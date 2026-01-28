@@ -3,6 +3,7 @@
 import { Flex, Text, Box, Span, SimpleGrid, VStack, HStack } from "@chakra-ui/react"
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MotionFlex = motion.create(Flex);
 const MotionText = motion.create(Text);
@@ -252,7 +253,7 @@ export default function Matrix() {
                             cursor="pointer"
                             display="inline-block"
                         >
-                            explore the next object →
+                            <Link href="/product">see how they come together as a concept product →</Link>
                         </Text>
                     </Box>
                 </motion.div>

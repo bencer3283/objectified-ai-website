@@ -53,6 +53,7 @@ export const NavBar = () => {
           <NavItem href="/abacus">internal representation</NavItem>
           <NavItem href="/cd">compartmentalization</NavItem>
           <NavItem href="/matrix">matrix</NavItem>
+          <NavItem href="/product">concept product</NavItem>
         </Flex>
       </Box>
     </Box>
