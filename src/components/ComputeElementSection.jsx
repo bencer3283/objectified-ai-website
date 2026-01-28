@@ -35,7 +35,7 @@ export default function ComputeElementSection() {
             <div
                 style={{
                     position: 'sticky',
-                    top: 0,
+                    top: '5vh',
                     height: '90vh',
                     width: '100%',
                     display: 'flex',
@@ -77,37 +77,37 @@ export default function ComputeElementSection() {
 
                             {/* Attention - Fades In */}
                             <motion.div style={{ opacity: attentionOpacity, width: '100%', height: '100%' }}>
-                                <Box position="absolute" top="17%" left="57.8%" pointerEvents="auto">
-                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "xl", lg: "40px" }} color="black">
+                                <Box position="absolute" top="14%" left="54.8%" pointerEvents="auto">
+                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "2xl" }} color="black">
                                         attention
                                     </Text>
                                     <Box mt={2} ml={10}>
-                                        <BsArrowUp size={30} color="black" style={{ transform: 'rotate(180deg)' }} />
+                                        <BsArrowUp size={36} color="black" style={{ transform: 'rotate(180deg)' }} />
                                     </Box>
                                 </Box>
                             </motion.div>
 
                             {/* Embedding - Fades In */}
                             <motion.div style={{ opacity: embeddingOpacity, width: '100%', height: '100%' }}>
-                                <Box position="absolute" top="57.2%" left="86.2%" pointerEvents="auto">
-                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "xl", lg: "40px" }} color="black">
+                                <Box position="absolute" top="57.2%" left="83.2%" pointerEvents="auto" display={'flex'} flexDirection={'row'}>
+                                    <Box mt={0} ml={2} mr={3} style={{ transform: 'rotate(-90deg)' }}>
+                                        <BsArrowUp size={36} color="black" />
+                                    </Box>
+                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "2xl" }} color="black">
                                         embedding
                                     </Text>
-                                    <Box mt={2} ml={10} style={{ transform: 'rotate(117deg)' }}>
-                                        <BsArrowUp size={40} color="black" />
-                                    </Box>
                                 </Box>
                             </motion.div>
 
                             {/* Perceptron - Fades In */}
                             <motion.div style={{ opacity: perceptronOpacity, width: '100%', height: '100%' }}>
-                                <Box position="absolute" top="80.8%" left="44.2%" pointerEvents="auto">
-                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "xl", lg: "40px" }} color="black">
+                                <Box position="absolute" top="77.8%" left="44.2%" pointerEvents="auto">
+                                    <Box mt={2} ml={10} style={{ transform: 'rotate(32deg)' }}>
+                                        <BsArrowUp size={36} color="black" />
+                                    </Box>
+                                    <Text fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic" fontWeight="semibold" fontSize={{ base: "sm", md: "2xl" }} color="black">
                                         perceptron
                                     </Text>
-                                    <Box mt={2} ml={10} style={{ transform: 'rotate(-90deg)' }}>
-                                        <BsArrowUp size={40} color="black" />
-                                    </Box>
                                 </Box>
                             </motion.div>
                         </Box>
