@@ -15,6 +15,7 @@ export default function Product() {
                 maxW="1600px"
                 mx="auto"
                 pt={{ base: "8vh", lg: "16vh" }}
+                pb={{ base: "6vh", lg: "12vh" }}
             >
                 <Text
                     fontFamily="var(--font-space-grotesk)"

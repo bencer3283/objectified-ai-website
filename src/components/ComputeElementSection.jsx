@@ -41,12 +41,13 @@ export default function ComputeElementSection() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    zIndex: 10
+                    zIndex: 10,
+                    backgroundColor: 'white'
                 }}
             >
                 {/* Content Container */}
                 <Box position="relative" w="full" maxW="2033px" mx="auto" px={4} h="full" display="flex" alignItems="center" justifyContent="center">
-                    <Box position="relative" w="full" aspectRatio={2033 / 1600} maxHeight="100vh">
+                    <Box position="relative" w="full" aspectRatio={2033 / 1600} maxHeight="105vh">
                         <Image
                             src="/images/product-1.PNG"
                             alt="Compute Element"
