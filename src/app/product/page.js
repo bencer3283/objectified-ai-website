@@ -192,6 +192,10 @@ export default function Product() {
                 </Box>
             </Box>
 
+            <Box w='full' h={'90vh'} my={'5vh'} justifyContent={'center'} display={'flex'}>
+                <iframe style={{"border": "1px solid rgba(0, 0, 0, 0.1)"}} width="1200" height="750" src="https://embed.figma.com/proto/pk8O9rZYgYicQK6Mp9C8zk/Triangular-Frame-UX?page-id=0%3A1&node-id=2-80&viewport=50%2C182%2C0.12&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2%3A80&embed-host=share" allowFullScreen></iframe>
+            </Box>
+
             <Box
                 w="full"
                 maxW="1600px"
