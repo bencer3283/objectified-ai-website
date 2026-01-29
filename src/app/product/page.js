@@ -29,9 +29,168 @@ export default function Product() {
             </Box>
 
             {/* New Section: Individual compute element - Outside the constrained maxW container */}
-            <div style={{ width: '100%', marginTop: '64px' }}>
+            <div style={{ width: '100%', marginTop: '64px'}}>
                 <ComputeElementSection />
             </div>
+
+            {/* Product 2 Section */}
+            <Box w="full" display="flex" justifyContent="center" mt={16} position="relative">
+                <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
+                    <Image
+                        src="/images/product-2.PNG"
+                        alt="Physical Shape Changes"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '12px' }}
+                    />
+                    <Box position="absolute" inset={0} pointerEvents="none">
+                         <Text
+                            position="absolute"
+                            top="6.6%"
+                            left="4.8%"
+                            fontFamily="var(--font-space-grotesk)"
+                            fontWeight="semibold"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                            lineHeight="1"
+                            maxW="59%"
+                            color="black"
+                        >
+                            the physical shape changes to reflect the configured size of each layer
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="66.3%"
+                            left="45.1%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            lineHeight="1"
+                            maxW="48%"
+                            color="black"
+                        >
+                            more cooling and computation capacity is activated to support bigger models on demand
+                        </Text>
+                    </Box>
+                </Box>
+            </Box>
+
+            {/* Product 3 Section */}
+            <Box w="full" display="flex" justifyContent="center" mt={16} position="relative">
+                <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
+                    <Image
+                        src="/images/product-3.PNG"
+                        alt="Swappable Compute Element"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '12px' }}
+                    />
+                    <Box position="absolute" inset={0} pointerEvents="none">
+                         <Text
+                            position="absolute"
+                            top="8.9%"
+                            left="6.0%"
+                            fontFamily="var(--font-space-grotesk)"
+                            fontWeight="semibold"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                            lineHeight="1"
+                            maxW="70%"
+                            color="black"
+                        >
+                            swappable compute element for compartmentalized knowledge
+                        </Text>
+                        
+                        {/* Labels */}
+                         <Text
+                            position="absolute"
+                            top="88.8%"
+                            left="51.5%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            color="black"
+                        >
+                            life
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="88.8%"
+                            left="62.9%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            color="black"
+                        >
+                            work
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="88.8%"
+                            left="73.9%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            color="black"
+                        >
+                            writing
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="88.8%"
+                            left="86.8%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            color="black"
+                        >
+                            image
+                        </Text>
+                    </Box>
+                </Box>
+            </Box>
+
+             {/* Product 4 Section */}
+            <Box w="full" display="flex" justifyContent="center" mt={16} mb={16} position="relative">
+                <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
+                    <Image
+                        src="/images/product-4.PNG"
+                        alt="Data Exchange"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '12px' }}
+                    />
+                    <Box position="absolute" inset={0} pointerEvents="none">
+                         <Text
+                            position="absolute"
+                            top="10.0%"
+                            left="6.9%"
+                            fontFamily="var(--font-space-grotesk)"
+                            fontWeight="semibold"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                            lineHeight="1"
+                            maxW="52%"
+                            color="black"
+                        >
+                            secure, intentional data exchange
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="79.9%"
+                            left="6.9%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            lineHeight="1"
+                            maxW="33%"
+                            color="black"
+                        >
+                            to access personal information like email, calendar or internet search
+                        </Text>
+                    </Box>
+                </Box>
+            </Box>
 
             <Box
                 w="full"

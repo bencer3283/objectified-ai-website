@@ -17,8 +17,8 @@ export default function ComputeElementSection() {
 
     // Animation sequences
     const headingOpacity = useTransform(scrollYProgress, [0.1, 0.2], [1, 0]);
-    const attentionOpacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
-    const embeddingOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
+    const attentionOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
+    const embeddingOpacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
     const perceptronOpacity = useTransform(scrollYProgress, [0.7, 0.8], [0, 1]);
 
     return (
@@ -42,12 +42,18 @@ export default function ComputeElementSection() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     zIndex: 10,
-                    backgroundColor: 'white'
+                    backgroundColor: 'white',
+                    borderRadius: '12px'
                 }}
             >
                 {/* Content Container */}
-                <Box position="relative" w="full" maxW="2033px" mx="auto" px={4} h="full" display="flex" alignItems="center" justifyContent="center">
-                    <Box position="relative" w="full" aspectRatio={2033 / 1600} maxHeight="105vh">
+                <Box position="relative" w="full" display="flex" alignItems="center" justifyContent="center">
+                    <Box 
+                        position="relative" 
+                        w="full" 
+                        maxW="calc(95vh * (2033 / 1600))" 
+                        aspectRatio={2033 / 1600}
+                    >
                         <Image
                             src="/images/product-1.PNG"
                             alt="Compute Element"
@@ -63,12 +69,12 @@ export default function ComputeElementSection() {
                                 <Text
                                     position="absolute"
                                     top="62.5%"
-                                    left="7%"
+                                    left="0%"
                                     fontFamily="var(--font-space-grotesk)"
                                     fontWeight="semibold"
                                     fontSize={{ base: "xl", md: "4xl", lg: "64px" }}
                                     lineHeight="1"
-                                    maxW="62.5%"
+                                    maxW="80%"
                                     color="black"
                                     pointerEvents="auto"
                                 >
@@ -90,7 +96,7 @@ export default function ComputeElementSection() {
 
                             {/* Embedding - Fades In */}
                             <motion.div style={{ opacity: embeddingOpacity, width: '100%', height: '100%' }}>
-                                <Box position="absolute" top="57.2%" left="83.2%" pointerEvents="auto" display={'flex'} flexDirection={'row'}>
+                                <Box position="absolute" top="57.2%" left="85.2%" pointerEvents="auto" display={'flex'} flexDirection={'row'}>
                                     <Box mt={0} ml={2} mr={3} style={{ transform: 'rotate(-90deg)' }}>
                                         <BsArrowUp size={36} color="black" />
                                     </Box>
