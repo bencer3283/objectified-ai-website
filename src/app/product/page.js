@@ -151,6 +151,47 @@ export default function Product() {
                 </Box>
             </Box>
 
+            {/* Product 5 Section */}
+            <Box w="full" display="flex" justifyContent="center" mt={16} mb={16} position="relative">
+                <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
+                    <Image
+                        src="/images/product-5.PNG"
+                        alt="Data Exchange"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '12px' }}
+                    />
+                    <Box position="absolute" inset={0} pointerEvents="none">
+                         <Text
+                            position="absolute"
+                            top="10.0%"
+                            left="6.9%"
+                            fontFamily="var(--font-space-grotesk)"
+                            fontWeight="semibold"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                            lineHeight="1"
+                            maxW="90%"
+                            color="black"
+                        >
+                            optional compute boost element
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="65%"
+                            left="78%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            lineHeight="1"
+                            maxW="33%"
+                            color="black"
+                        >
+                            for even larger model
+                        </Text>
+                    </Box>
+                </Box>
+            </Box>
+
              {/* Product 4 Section */}
             <Box w="full" display="flex" justifyContent="center" mt={16} mb={16} position="relative">
                 <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
@@ -187,6 +228,47 @@ export default function Product() {
                             color="black"
                         >
                             to access personal information like email, calendar or internet search
+                        </Text>
+                    </Box>
+                </Box>
+            </Box>
+
+            {/* Product 6 Section */}
+            <Box w="full" display="flex" justifyContent="center" mt={16} mb={16} position="relative">
+                <Box position="relative" w="full" maxW="calc(95vh * (2033 / 1355))" aspectRatio={2033 / 1355}>
+                    <Image
+                        src="/images/product-6.PNG"
+                        alt="Data Exchange"
+                        fill
+                        style={{ objectFit: 'contain', borderRadius: '12px' }}
+                    />
+                    <Box position="absolute" inset={0} pointerEvents="none">
+                         <Text
+                            position="absolute"
+                            top="9.0%"
+                            left="6.9%"
+                            fontFamily="var(--font-space-grotesk)"
+                            fontWeight="semibold"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                            lineHeight="1"
+                            maxW="65%"
+                            color="black"
+                        >
+                            fully local training station 
+                        </Text>
+                         <Text
+                            position="absolute"
+                            top="83%"
+                            left="6.9%"
+                            fontFamily="var(--font-ibm-plex-serif)"
+                            fontStyle="italic"
+                            fontWeight="semibold"
+                            fontSize={{ base: "sm", md: "2xl" }}
+                            lineHeight="1"
+                            maxW="40%"
+                            color="black"
+                        >
+                            record conversation or upload custom data to fine-tune your own unique model 
                         </Text>
                     </Box>
                 </Box>

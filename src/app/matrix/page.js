@@ -253,7 +253,7 @@ export default function Matrix() {
                             cursor="pointer"
                             display="inline-block"
                         >
-                            <Link href="/product">see how they come together as a concept product →</Link>
+                            <Link href="/grooves">see how they come together as a concept product →</Link>
                         </Text>
                     </Box>
                 </motion.div>
