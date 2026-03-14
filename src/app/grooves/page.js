@@ -259,12 +259,12 @@ const Walkaround = () => {
 export default function Grooves() {
     return(
         <div style={{ backgroundColor: '#545252', minHeight: '100vh', width: '100%', padding: '16px', color: 'white'}}>
-            <VStack pt={'10vh'} px={'16'}>
+            <VStack pt={'10vh'} px={'16'} alignItems={'center'}>
                 <Walkaround />
                 <Text
                     fontFamily="var(--font-space-grotesk)"
                     fontWeight="semibold"
-                    fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                    fontSize={{ base: "1xl", md: "3xl", lg: "48px" }}
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
@@ -276,16 +276,18 @@ export default function Grooves() {
                     as="video"
                     src="/videos/groove_adjust.mov"
                     preload="auto"
+                    autoPlay
+                    loop
                     muted
                     playsInline
-                    width="100%"
+                    maxH={'80vh'}
                     borderRadius="3xl"
                     boxShadow="2xl"
                 />
                 <Text
                     fontFamily="var(--font-space-grotesk)"
                     fontWeight="semibold"
-                    fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                    fontSize={{ base: "1xl", md: "3xl", lg: "48px" }}
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
@@ -297,16 +299,18 @@ export default function Grooves() {
                     as="video"
                     src="/videos/groove_swap.mov"
                     preload="auto"
+                    autoPlay
+                    loop
                     muted
                     playsInline
-                    width="100%"
+                    maxH={'80vh'}
                     borderRadius="3xl"
                     boxShadow="2xl"
                 />
                 <Text
                     fontFamily="var(--font-space-grotesk)"
                     fontWeight="semibold"
-                    fontSize={{ base: "2xl", md: "4xl", lg: "64px" }}
+                    fontSize={{ base: "1xl", md: "3xl", lg: "48px" }}
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
@@ -318,9 +322,11 @@ export default function Grooves() {
                     as="video"
                     src="/videos/animation_tap.69.mp4"
                     preload="auto"
+                    autoPlay
+                    loop
                     muted
                     playsInline
-                    width="100%"
+                    maxH={"80vh"}
                     borderRadius="3xl"
                     boxShadow="2xl"
                 />
