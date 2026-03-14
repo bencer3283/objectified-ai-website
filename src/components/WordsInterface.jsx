@@ -145,6 +145,9 @@ export const WordsInterface = () => {
           if LLMs can converse like humans, chatbot makes sense.
           <br />
           <Span fontFamily="var(--font-ibm-plex-serif)" fontStyle="italic">But the technology is just not there yet.</Span>
+          <br />
+          <br />
+          right now, human-AI interface is designed so that AI is a blockbox, making it impossible for the user to know what it is and how it works. 
         </Text>
         </Box>
         {/* Paragraph 6 */}
@@ -156,7 +159,7 @@ export const WordsInterface = () => {
           lineHeight="1.1"
           pb={'3vh'}
         >
-          so I designed a few small objects to illustrate some alternative ways we can interact with LLMs......
+          I want to design the embodiment of a different kind of AI that is more grounded to the affordance of it, so that we can have a proper conversation about the AI we want.
         </Text>
         
         {/* Call to Action */}

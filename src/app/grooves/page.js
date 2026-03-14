@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "motion/react";
 import Image from "next/image";
 
-const SectionRow = ({ label, items, images, ...props }) => {
+const SectionRowBig = ({ label, items, images, ...props }) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -26,13 +26,13 @@ const SectionRow = ({ label, items, images, ...props }) => {
         <Text
           fontFamily="var(--font-space-grotesk)"
           fontWeight="bold"
-          fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
-          lineHeight="1"
+          fontSize={{ base: "3xl", md: "5xl", lg: "84px" }}
+          lineHeight="1.2"
           whiteSpace="nowrap"
         >
           {label}
         </Text>
-        <Box height={{ base: "40px", md: "60px", lg: "70px" }} position="relative" overflow="hidden">
+        <Box height={{ base: "40px", md: "65px", lg: "105px" }} position="relative" overflow="hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -45,8 +45,8 @@ const SectionRow = ({ label, items, images, ...props }) => {
                 fontFamily="var(--font-ibm-plex-serif)"
                 fontWeight="semibold"
                 fontStyle={'italic'}
-                fontSize={{ base: "3xl", md: "5xl", lg: "64px" }}
-                lineHeight='1'
+                fontSize={{ base: "3xl", md: "5xl", lg: "84px" }}
+                lineHeight='1.2'
               >
                 {items[index]}
               </Text>
@@ -129,7 +129,7 @@ const Walkaround = () => {
         <div ref={containerRef} style={{ height: '1200vh', width: '100%'}}>
             <div style={{position: 'sticky', display: 'flex', alignItems: 'center', zIndex: 10, top: '8vh', height: '90vh', width: '100%',}}>
                 <VStack>
-                    <SectionRow label={"AI that is"} items={["small", "mechanized", "informative", "user-owned", "configurable", "modular", "context-specific", "personal", "local", "intentional"]} />
+                    <SectionRowBig label={"AI that is"} items={["small", "mechanized", "informative", "user-owned", "configurable", "modular", "context-specific", "personal", "local", "intentional", "erasable"]} />
                     <Box
                         ref={videoRef}
                         mt={8}
@@ -147,7 +147,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: embeddingOpacity, translateY: embeddingY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="33%"
+                          top="34%"
                           left="12%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -165,7 +165,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: attentionOpacity, translateY: attentionY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="45%"
+                          top="46%"
                           left="8%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -183,7 +183,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: perceptronOpacity, translateY: perceptronY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="70%"
+                          top="71%"
                           left="59%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -201,7 +201,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: ventsOpacity, translateY: ventsY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="70%"
+                          top="73%"
                           left="51%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -219,7 +219,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: nfcOpacity, translateY: nfcY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="43%"
+                          top="45%"
                           left="26%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -237,7 +237,7 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: batteryOpacity, batteryY: nfcY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="71%"
+                          top="73%"
                           left="39%"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
@@ -274,7 +274,7 @@ export default function Grooves() {
                 <Box
                     mt={8}
                     as="video"
-                    src="/videos/groove_adjust.mov"
+                    src="/videos/groove_adjust.mp4"
                     preload="auto"
                     autoPlay
                     loop
@@ -297,7 +297,7 @@ export default function Grooves() {
                 <Box
                     mt={8}
                     as="video"
-                    src="/videos/groove_swap.mov"
+                    src="/videos/groove_swap.mp4"
                     preload="auto"
                     autoPlay
                     loop

@@ -27,7 +27,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata = {
-  title: {default: "Objectified AI"},
+  title: {default: "Mechanized AI"},
   description: "Exploration of tangible human interfaces that represent what AI really is in current time.",
 };
 
