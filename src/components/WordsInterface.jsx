@@ -173,7 +173,7 @@ export const WordsInterface = () => {
               cursor="pointer"
               display="inline-block"
             >
-              <Link href="/abacus">explore the first object →</Link>
+              <Link href="/grooves">explore the concept →</Link>
             </Text>
         </motion.div>
         </Box>
