@@ -128,32 +128,32 @@ const Walkaround = () => {
     return(
         <div ref={containerRef} style={{ height: '1200vh', width: '100%'}}>
             <div style={{position: 'sticky', display: 'flex', alignItems: 'center', zIndex: 10, top: '8vh', height: '90vh', width: '100%',}}>
-                <VStack>
+                <VStack w="full">
                     <SectionRowBig label={"AI that is"} items={["small", "mechanized", "informative", "user-owned", "configurable", "modular", "context-specific", "personal", "local", "intentional", "erasable"]} />
-                    <Box
-                        ref={videoRef}
-                        mt={8}
-                        as="video"
-                        src="/videos/animation.61.mp4"
-                        preload="auto"
-                        muted
-                        playsInline
-                        width="100%"
-                        borderRadius="3xl"
-                        boxShadow="2xl"
-                    />
-                </VStack>
-                <Box position="absolute" inset={0} pointerEvents="none">
+                    <Box position="relative" w="full" mt={8}>
+                        <Box
+                            ref={videoRef}
+                            as="video"
+                            src="/videos/animation.61.mp4"
+                            preload="auto"
+                            muted
+                            playsInline
+                            width="100%"
+                            borderRadius="3xl"
+                            boxShadow="2xl"
+                        />
+                <Box position="absolute" inset={0} pointerEvents="none" w={'100%'}>
                   <motion.div style={{ opacity: embeddingOpacity, translateY: embeddingY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="34%"
-                          left="12%"
+                          top="15%"
+                          left="38%"
+                          transform="translateX(-100%)"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.800'
                           pointerEvents="auto"
                       >
@@ -165,13 +165,14 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: attentionOpacity, translateY: attentionY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="46%"
-                          left="8%"
+                          top="33%"
+                          left="33%"
+                          transform="translateX(-100%)"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.700'
                           pointerEvents="auto"
                       >
@@ -183,13 +184,13 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: perceptronOpacity, translateY: perceptronY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="71%"
+                          top="65%"
                           left="59%"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.700'
                           pointerEvents="auto"
                       >
@@ -202,16 +203,16 @@ const Walkaround = () => {
                       <Text
                           position="absolute"
                           top="73%"
-                          left="51%"
+                          left="55%"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.700'
                           pointerEvents="auto"
                       >
-                          ↑ Adaptable Cooling Vents
+                          ↑ Adaptive Cooling Vents
                       </Text>
                   </motion.div>
                 </Box>
@@ -219,31 +220,34 @@ const Walkaround = () => {
                   <motion.div style={{ opacity: nfcOpacity, translateY: nfcY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="45%"
-                          left="26%"
+                          top="31%"
+                          left="60%"
+                          transform="translateX(-100%)"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.700'
+                          textShadow="0px 2px 4px rgba(0,0,0,0.2)"
                           pointerEvents="auto"
                       >
-                          Near Field Communication ↓
+                          Secure Near Field Communication ↓
                       </Text>
                   </motion.div>
                 </Box>
                 <Box position="absolute" inset={0} pointerEvents="none">
-                  <motion.div style={{ opacity: batteryOpacity, batteryY: nfcY , width: '100%', height: '100%' }}>
+                  <motion.div style={{ opacity: batteryOpacity, translateY: batteryY , width: '100%', height: '100%' }}>
                       <Text
                           position="absolute"
-                          top="73%"
-                          left="39%"
+                          top="68%"
+                          left="62%"
+                          transform="translateX(-100%)"
+                          whiteSpace="nowrap"
                           fontFamily="var(--font-space-grotesk)"
                           fontWeight="semibold"
-                          fontSize={{ base: "m", md: "2xl", lg: "32px" }}
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
                           lineHeight="1"
-                          maxW="80%"
                           color='gray.700'
                           pointerEvents="auto"
                       >
@@ -251,6 +255,8 @@ const Walkaround = () => {
                       </Text>
                   </motion.div>
                 </Box>
+                    </Box>
+                </VStack>
             </div>
         </div>
     )
@@ -277,6 +283,7 @@ export default function Grooves() {
                     src="/videos/groove_adjust.mp4"
                     preload="auto"
                     autoPlay
+                    controls
                     loop
                     muted
                     playsInline
@@ -300,6 +307,7 @@ export default function Grooves() {
                     src="/videos/groove_swap.mp4"
                     preload="auto"
                     autoPlay
+                    controls
                     loop
                     muted
                     playsInline
@@ -322,7 +330,7 @@ export default function Grooves() {
                     as="video"
                     src="/videos/animation_tap.69.mp4"
                     preload="auto"
-                    autoPlay
+                    controls
                     loop
                     muted
                     playsInline
