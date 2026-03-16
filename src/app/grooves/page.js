@@ -124,6 +124,8 @@ const Walkaround = () => {
     const nfcY = useTransform(scrollYProgress, [0.36, 0.39], [8, 0])
     const batteryOpacity = useTransform(scrollYProgress, [0.58, 0.61, 0.68, 0.72], [0, 1, 1, 0])
     const batteryY = useTransform(scrollYProgress, [0.58, 0.61], [8, 0])
+    const labelOpacity = useTransform(scrollYProgress, [0.84, 0.88, 0.92, 0.94], [0, 1, 1, 0])
+    const labelY = useTransform(scrollYProgress, [0.84, 0.88], [8, 0])
 
     return(
         <div ref={containerRef} style={{ height: '1200vh', width: '100%'}}>
@@ -255,6 +257,27 @@ const Walkaround = () => {
                       </Text>
                   </motion.div>
                 </Box>
+                <Box position="absolute" inset={0} pointerEvents="none">
+                  <motion.div style={{ opacity: labelOpacity, translateY: labelY , width: '100%', height: '100%' }}>
+                      <Text
+                          position="absolute"
+                          top="41%"
+                          left="43%"
+                          transform="translateX(-100%)"
+                          whiteSpace="nowrap"
+                          fontFamily="var(--font-space-grotesk)"
+                          fontWeight="semibold"
+                          fontSize={{ base: "md", md: "2xl", lg: "32px" }}
+                          lineHeight="1"
+                          color='gray.700'
+                          textShadow="0px 2px 4px rgba(0,0,0,0.2)"
+                          pointerEvents="auto"
+                      >
+                          Programmable E-Ink Label ↓
+                      </Text>
+                  </motion.div>
+                </Box>
+                
                     </Box>
                 </VStack>
             </div>
