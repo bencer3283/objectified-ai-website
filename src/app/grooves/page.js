@@ -288,119 +288,148 @@ const Walkaround = () => {
 
 const ExpandableCard = ({ title, images = [], texts = [] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  if (isExpanded) {
-    return (
-      <GridItem
-        colSpan={{ base: 1, lg: 2 }}
-        w="full"
-        h="70vh"
-        bg="white"
-        borderRadius="36px"
-        p={10}
-        display="flex"
-        flexDirection="column"
-        gap={6}
-        overflow="hidden"
-      >
-        <Flex justify="space-between" align="center">
-          <Text
-            fontFamily="var(--font-space-grotesk)"
-            fontWeight="semibold"
-            fontSize={{ base: "1xl", md: "3xl", lg: "48px" }}
-            color="black"
-            lineHeight="normal"
-            cursor="pointer"
-            onClick={() => setIsExpanded(false)}
-          >
-            {title}
-          </Text>
-          <CloseButton onClick={() => setIsExpanded(false)} colorPalette={"gray"} size="lg" variant="subtle" />
-        </Flex>
-        <Box flex={1} overflow="hidden" position="relative" onClick={(e) => e.stopPropagation()} cursor="default">
-            <Carousel.Root slideCount={images.length} h="100%" w="full">
-              <Carousel.ItemGroup h="100%">
-                {images.map((src, index) => (
-                  <Carousel.Item key={index} index={index} h="100%">
-                    <Flex h="100%" direction={{ base: "column", md: "row" }} gap={8}>
-                        <Box flex={{ base: 1, md: 2 }} position="relative" borderRadius="24px" overflow="hidden" h="100%">
-                            <Image
-                                src={src}
-                                alt={title}
-                                fill
-                                style={{ objectFit: 'cover' }}
-                            />
-                        </Box>
-                        <Box flex={{ base: 1, md: 1 }} display="flex" alignItems="center" pb={{ base: 12, md: 0 }}>
-                            <Text
-                                fontFamily="var(--font-ibm-plex-serif)"
-                                fontStyle="normal"
-                                fontWeight="regular"
-                                fontSize={{ base: "s", md: "s", lg: "24px" }}
-                                color="black"
-                                lineHeight="normal"
-                                whiteSpace="pre-wrap"
-                            >
-                                {texts[index] || ""}
-                            </Text>
-                        </Box>
-                    </Flex>
-                  </Carousel.Item>
-                ))}
-              </Carousel.ItemGroup>
-              <Carousel.Control gap="4" zIndex={10} p={2} borderRadius="full" backgroundColor="gray.200">
-                <Carousel.PrevTrigger asChild>
-                  <IconButton size="sm" variant="outline" color="black" bg="gray.200" rounded="full">
-                    <LuChevronLeft />
-                  </IconButton>
-                </Carousel.PrevTrigger>
-                <Carousel.Indicators />
-                <Carousel.NextTrigger asChild>
-                  <IconButton size="sm" variant="outline" color="black" bg="gray.200" rounded="full">
-                    <LuChevronRight />
-                  </IconButton>
-                </Carousel.NextTrigger>
-              </Carousel.Control>
-            </Carousel.Root>
-        </Box>
-      </GridItem>
-    );
-  }
+  const [layoutCompleteCount, setLayoutCompleteCount] = useState(0);
 
   return (
     <GridItem
-      colSpan={1}
+      colSpan={isExpanded ? { base: 1, lg: 2 } : 1}
       w="full"
-      h={"35vh"}
-      bg="white"
-      borderRadius="36px"
-      p={6}
-      cursor="pointer"
-      onClick={() => setIsExpanded(true)}
-      display="flex"
-      flexDirection="column"
-      gap={6}
-      overflow="hidden"
+      asChild
     >
-      <Box flex={1} position="relative" borderRadius="24px" overflow="hidden">
-        {images[0] && (
-            <Image
-                src={images[0]}
-                alt={title}
-                fill
-                style={{ objectFit: 'cover' }}
-            />
-        )}
-      </Box>
-      <Text
-        fontFamily="var(--font-space-grotesk)"
-        fontWeight="semibold"
-        fontSize={{ base: "l", md: "2xl", lg: "36px" }}
-        color="black"
-        lineHeight="normal"
+      <motion.div
+        layout
+        onClick={() => !isExpanded && setIsExpanded(true)}
+        whileHover={!isExpanded ? { scale: 1.02 } : {}}
+        transition={{ layout: { type: "spring", stiffness: 300, damping: 30 }, scale: { type: "tween", ease: "easeInOut", damping: 10 } }}
+        onLayoutAnimationComplete={() => {
+          if (isExpanded) {
+            setLayoutCompleteCount(c => c + 1);
+          }
+          window.dispatchEvent(new Event('resize'));
+        }}
+        style={{
+          backgroundColor: isExpanded ? "var(--chakra-colors-gray-200)" : "white",
+          borderRadius: "36px",
+          padding: isExpanded ? "40px" : "24px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+          overflow: "hidden",
+          boxShadow: isExpanded ? "var(--chakra-shadows-xl)" : "var(--chakra-shadows-l)",
+          cursor: isExpanded ? "default" : "pointer",
+          width: "100%",
+          height: "100%",
+        }}
       >
-        {title}
-      </Text>
+        <AnimatePresence mode="popLayout" initial={false}>
+          {isExpanded ? (
+            <motion.div
+              key="expanded"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{ display: "flex", flexDirection: "column", height: "70vh", gap: "24px", width: "100%" }}
+            >
+              <Flex justify="space-between" align="center">
+                <Text
+                  fontFamily="var(--font-space-grotesk)"
+                  fontWeight="semibold"
+                  fontSize={{ base: "1xl", md: "3xl", lg: "48px" }}
+                  color="black"
+                  lineHeight="normal"
+                  cursor="pointer"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsExpanded(false);
+                  }}
+                >
+                  {title}
+                </Text>
+                <CloseButton
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsExpanded(false);
+                  }}
+                  colorPalette={"gray"}
+                  size="lg"
+                  variant="subtle"
+                />
+              </Flex>
+              <Box 
+                flex={1} 
+                overflow="hidden" 
+                position="relative" 
+                onClick={(e) => e.stopPropagation()} 
+                cursor="default"
+                width={`calc(100% - ${layoutCompleteCount % 2 === 0 ? 0 : 0.1}px)`}
+              >
+                <Carousel.Root slideCount={images.length} h="100%" w="full">
+                  <Carousel.ItemGroup h="100%">
+                    {images.map((src, index) => (
+                      <Carousel.Item key={index} index={index} h="100%">
+                        <Flex h="100%" direction={{ base: "column", md: "row" }} gap={8}>
+                          <Box flex={{ base: 1, md: 2 }} position="relative" borderRadius="24px" overflow="hidden" h="100%">
+                            <Image src={src} alt={title} fill style={{ objectFit: 'cover' }} />
+                          </Box>
+                          <Box flex={{ base: 1, md: 1 }} display="flex" alignItems="center" pb={{ base: 12, md: 0 }}>
+                            <Text
+                              fontFamily="var(--font-ibm-plex-serif)"
+                              fontStyle="normal"
+                              fontWeight="regular"
+                              fontSize={{ base: "xs", md: "s", lg: "21px" }}
+                              color="black"
+                              lineHeight="normal"
+                              whiteSpace="pre-wrap"
+                            >
+                              {texts[index] || ""}
+                            </Text>
+                          </Box>
+                        </Flex>
+                      </Carousel.Item>
+                    ))}
+                  </Carousel.ItemGroup>
+                  <Carousel.Control gap="4" zIndex={10} p={2} borderRadius="full">
+                    <Carousel.PrevTrigger asChild>
+                      <IconButton size="sm" variant="subtle" color="black" bg="white" rounded="full">
+                        <LuChevronLeft />
+                      </IconButton>
+                    </Carousel.PrevTrigger>
+                    <Carousel.Indicators />
+                    <Carousel.NextTrigger asChild>
+                      <IconButton size="sm" variant="subtle" color="black" bg="white" rounded="full">
+                        <LuChevronRight />
+                      </IconButton>
+                    </Carousel.NextTrigger>
+                  </Carousel.Control>
+                </Carousel.Root>
+              </Box>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="collapsed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              style={{ display: "flex", flexDirection: "column", height: "35vh", gap: "24px", width: "100%" }}
+            >
+              <Box flex={1} position="relative" borderRadius="24px" overflow="hidden">
+                {images[0] && <Image src={images[0]} alt={title} fill style={{ objectFit: 'cover' }} />}
+              </Box>
+              <Text
+                fontFamily="var(--font-space-grotesk)"
+                fontWeight="semibold"
+                fontSize={{ base: "l", md: "2xl", lg: "36px" }}
+                color="black"
+                lineHeight="normal"
+              >
+                {title}
+              </Text>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </GridItem>
   );
 };
@@ -417,6 +446,7 @@ export default function Grooves() {
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
+                    alignSelf={'flex-start'}
                 >
                     Adjustable compute power allocation for customized model size
                 </Text>
@@ -441,6 +471,7 @@ export default function Grooves() {
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
+                    alignSelf={'flex-start'}
                 >
                     Modular configuration for different tasks and context
                 </Text>
@@ -465,6 +496,7 @@ export default function Grooves() {
                     lineHeight="1"
                     color="white"
                     paddingTop={16}
+                    alignSelf={'flex-start'}
                 >
                     Intentional, secure and off-grid communications
                 </Text>
@@ -489,6 +521,7 @@ export default function Grooves() {
                     color="white"
                     paddingTop={16}
                     paddingBottom={8}
+                    alignSelf={'flex-start'}
                 >
                     Case Studies
                 </Text>
