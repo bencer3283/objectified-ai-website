@@ -536,15 +536,15 @@ export default function Grooves() {
                         title="National Security"
                         images={["/images/security-1.png", "/images/security-2.png"]}
                         texts={[
-                            "Officials from two different countries are negotiating a Free Trade Agreement in a meeting.  They are using this AI tool to take notes from the meeting and also to quickly browse through piles of highly secretive data about their own country's economy.",
-                            "After the meeting, they destroy the physical device on-site to make sure no classified information leaves the room or is compromised by the other party. No digital traces of any kind are left."
+                            "Officials from two different countries are negotiating a Free Trade Agreement in a meeting. They are using this AI tool to take notes from the meeting and also to quickly browse through piles of highly secretive economic data about their own country.",
+                            "After the meeting, they destroy the physical device on-site to make sure no classified information leaves the room or is compromised by the other party. Unlike a cloud-based AI system, no digital traces of any kind are left."
                         ]}
                     />
                     <ExpandableCard 
                         title="Community Culture"
                         images={["/images/culture-1.png", "/images/culture-2.png", "/images/culture-3.png"]}
                         texts={[
-                            "Local communities can use their data to train models so that models understands the cultural background of the communities. It becomes useful for models to engage with cultural materials, to behave according to community guidelines and to preserve important knowledge. ",
+                            "Local communities can use their data to train models so that models understand the cultural background of the communities. It becomes useful for models to engage with cultural materials, to behave according to community guidelines and to preserve important knowledge.",
                             "Compare to could-based foundation models, these small models can be fine-tuned and steered much more easily. The data stays owned and controlled by the community, without being significantly diluted by foundational datasets.",
                             "They can also retains a repository of models/modules specific to different aspect or realm of their culture, say one for textiles, one for graphical patterns and one for music, essentially becoming a library of models that can be provided to members of the community or licensed to external institutions."
                         ]}
@@ -554,8 +554,8 @@ export default function Grooves() {
                         images={["/images/trade-1.png", "/images/trade-2.png", "/images/trade-3.png"]}
                         texts={[
                             "Experienced woodworkers practices making as an art, they have their own unique techniques, approaches and logics to making. They prefer a certain set of tools, and use them in a highly individualized way.",
-                            "They can now use the AI device to record how their personal processes and train the model to understand their unique preference for woodworking. The AI becomes a truly personal collaboration and brainstorming tool instead of just reporting generic summarization of instruction manual from the internet.",
-                            "Users can also easily share their special techniques from years of experiences to other people just by share the model. They can also license their unique knowledge to other entities. By giving the model their personal training data, they also don’t have to worry about the model responding with untrustworthy data source."
+                            "They can now use the AI device to record how their personal processes and train the model to understand their unique preference for woodworking. The AI becomes a truly personal collaboration and brainstorming tool instead of just reporting generic summarization of instruction manuals from the internet.",
+                            "Users can also easily passing down their special techniques from years of experiences to other people just by share the model. They can also license their unique knowledge to other entities. By giving the model their personal training data, they also don't have to worry about the model responding with untrustworthy data source."
                         ]}
                     />
                     <ExpandableCard 
@@ -563,7 +563,7 @@ export default function Grooves() {
                         images={["/images/healthcare-1.png", "/images/healthcare-2.png", "/images/healthcare-3.png"]}
                         texts={[
                             "You are at work and the school of your 10-year-old daughter called because the school nurse found out that she needs to go to the dentist asap. You need to figure out whether you can book an appointment with your dentist or otherwise your daughter might have to go to the ER.",
-                            "You can quickly swap the embedding module you are using at work to the one that you've been using for parenting, which also knows personal information about your daughter. The model can now help with the reservation or even find some back-up options that suit your daughter's need. Once it reports clearer path forward, you can switch back to the work module.",
+                            "You can quickly swap the embedding module you are using at work to the one that you've been using for your daughter's healthcare. The model can now help with the reservation or even find some back-up options that suit your daughter's need. Once it reports clearer path forward, you can switch back to the work module and stay focused.",
                             "At the dentist appointment, you can share the embedding module which has the knowledge of your daughter's healthcare record with the practitioner so they can quickly understand what's going on. While they are doing additional tests and diagnosis for your daughter, these new data can also be loaded to the module. The healthcare data stays owned and controlled by you. It is not shared with others without your explicit consent, and it becomes something you use utilize independently yourself."
                         ]}
                     />
