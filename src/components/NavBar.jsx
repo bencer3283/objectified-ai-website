@@ -53,6 +53,8 @@ export const NavBar = () => {
         >
           <NavItem href="/">synopsis</NavItem>
 
+          <NavItem href="https://posheng1.substack.com">project updates</NavItem>
+
           <NavItem href="/grooves">concept design</NavItem>
           
           <Box

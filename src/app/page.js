@@ -77,6 +77,31 @@ export default function Home() {
           </motion.div>
         </Flex>
       </Box>
+      <Box
+        w="100%"
+        bg="#545252"
+        paddingY={"5vh"}>
+        <Box
+        w="80%"
+        mx="auto"
+        bg="#545252"
+        alignSelf="center"
+        borderRadius="3xl"
+        overflow="hidden"
+        shadow={"xl"}
+      >
+        <iframe
+          src="https://posheng1.substack.com/embed"
+          width="100%"
+          height="320"
+          style={{ border: "none", background: "#545252"}}
+          frameBorder="0"
+          scrolling="no"
+          title="Substack Subscription"
+        />
+      </Box>
+      </Box>
+      
       <Words />
       <WordsInterface />
     </>
