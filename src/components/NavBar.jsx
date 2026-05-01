@@ -101,9 +101,12 @@ export const NavBar = () => {
                 </Flex>
               </Box>
             )}
+
           </Box>
 
-          
+            
+            
+          <NavItem href={'https://bencer3283.github.io/portfolio/thesis/'}>process documentation</NavItem>
         </Flex>
       </Box>
     </Box>
