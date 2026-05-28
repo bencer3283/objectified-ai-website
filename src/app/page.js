@@ -4,7 +4,7 @@ import { Box, Text, VStack, Link as ChakraLink } from "@chakra-ui/react";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
+import MachineIndex from "@/components/MachineIndex";
 
 const Section = ({ title, body, opacity, y, top, left, width }) => {
   return (
@@ -38,31 +38,6 @@ const Section = ({ title, body, opacity, y, top, left, width }) => {
     </Box>
   );
 };
-
-const ArchiveItem = ({ children, top, left, dest="/" }) => (
-  <ChakraLink
-    asChild
-    position="absolute"
-    top={top}
-    left={left}
-    color="black"
-    fontFamily="var(--font-ibm-plex-mono)"
-    fontWeight="semibold"
-    fontSize={{ base: "21px", md: "24px", lg: "36px" }}
-    textTransform="uppercase"
-    textDecoration="underline"
-    _hover={{ textDecoration: "none", bg: "rgba(255, 255, 255, 0.8)" }}
-    zIndex={20}
-    bg="rgba(255, 255, 255, 0.5)"
-    backdropFilter="blur(10px)"
-    px={4}
-    py={2}
-    borderRadius="xl"
-    transition="all 0.2s"
-  >
-    <Link href={dest}>{children}</Link>
-  </ChakraLink>
-);
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -161,35 +136,7 @@ export default function Home() {
 
         </Box>
       </Box>
-
-      {/* Archive Section */}
-      <Box w="full" bg="white" py="20vh" px="4.45%" position="relative">
-        <Box 
-          position="relative" 
-          w="full" 
-          maxW="2140px" 
-          mx="auto" 
-          aspectRatio={2140 / 1204}
-        >
-          {/* Background Image Placeholder */}
-          <Box position="absolute" inset={0} zIndex={0}>
-            <Image
-              src="/images/machine/DSC_3290.jpg"
-              alt="Archive Background"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </Box>
-
-          {/* Precise Positioning based on 2560px Figma Width and 1600px Figma Height for the container (estimated from absolute tops) */}
-          <ArchiveItem top="29.6%" left="21%" dest="/mailbox">mailbox</ArchiveItem>
-          <ArchiveItem top="29.6%" left="50.9%">clamp</ArchiveItem>
-          <ArchiveItem top="29.6%" left="70.2%">slider</ArchiveItem>
-          <ArchiveItem top="62.2%" left="36.4%">scroll wheel</ArchiveItem>
-          <ArchiveItem top="64.4%" left="75.7%">slot machine</ArchiveItem>
-
-        </Box>
+      <MachineIndex />
       </Box>
-    </Box>
   );
 }

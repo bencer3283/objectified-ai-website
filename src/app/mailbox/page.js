@@ -1,5 +1,6 @@
 'use client'
 
+import MachineIndex from "@/components/MachineIndex";
 import { Box, Text, VStack, Span } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -122,6 +123,7 @@ export default function Mailbox() {
         alt="Mailbox Detail 1"
         caption="the physical size limitation of the mailbox is an indication of the context window of LLMs"
       />
+      <MachineIndex/>
     </Box>
   );
 }
