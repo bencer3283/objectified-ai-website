@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Space_Grotesk, IBM_Plex_Serif } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk, IBM_Plex_Serif, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
 import { NavBar } from "@/components/NavBar";
@@ -26,6 +26,12 @@ const ibmPlexSerif = IBM_Plex_Serif({
   style: ['normal', 'italic'],
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "600"],
+});
+
 export const metadata = {
   title: {default: "Mechanized AI"},
   description: "Exploration of tangible human interfaces that represent what AI really is in current time.",
@@ -34,7 +40,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${ibmPlexSerif.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${ibmPlexSerif.variable} ${ibmPlexMono.variable}`}>
         <Provider>
           <NavBar />
           {children}

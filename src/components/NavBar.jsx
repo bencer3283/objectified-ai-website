@@ -12,9 +12,10 @@ const NavItem = ({ href, children }) => {
   return (
     <ChakraLink
       asChild
-      color="white"
-      fontFamily="var(--font-ibm-plex-serif)"
+      color="black"
+      fontFamily="var(--font-ibm-plex-mono)"
       fontSize="m"
+      fontWeight={"semibold"}
       textDecoration={isActive ? "underline" : "none"}
       _hover={{ textDecoration: "underline" }}
       whiteSpace="nowrap"
@@ -52,10 +53,6 @@ export const NavBar = () => {
           direction={{ base: "column", md: "row" }}
         >
           <NavItem href="/">synopsis</NavItem>
-
-          <NavItem href="https://posheng1.substack.com">project updates</NavItem>
-
-          <NavItem href="/grooves">concept design</NavItem>
           
           <Box
             position="relative"
@@ -63,16 +60,17 @@ export const NavBar = () => {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <Text
-              color="white"
-              fontFamily="var(--font-ibm-plex-serif)"
+              color="black"
+              fontFamily="var(--font-ibm-plex-mono)"
               fontSize="m"
+              fontWeight={"semibold"}
               cursor="pointer"
               textDecoration={isDropdownOpen ? "underline" : "none"}
               _hover={{ textDecoration: "underline" }}
               whiteSpace="nowrap"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
-              objects archive ▾
+              archive ▾
             </Text>
 
             {isDropdownOpen && (
@@ -94,6 +92,8 @@ export const NavBar = () => {
                   gap={4}
                   alignItems="center"
                 >
+                  <NavItem href="/synopsis">synopsis</NavItem>
+                  <NavItem href="/grooves">concept product</NavItem>
                   <NavItem href="/abacus">internal representation</NavItem>
                   <NavItem href="/cd">compartmentalization</NavItem>
                   <NavItem href="/matrix">matrix</NavItem>
