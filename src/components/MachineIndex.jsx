@@ -49,10 +49,10 @@ export default function MachineIndex() {
 
         {/* Precise Positioning based on 2560px Figma Width and 1600px Figma Height for the container (estimated from absolute tops) */}
         <IndexItem top="23%" left="21%" dest="/mailbox">mailbox</IndexItem>
-        <IndexItem top="23%" left="50.9%">clamp</IndexItem>
-        <IndexItem top="23%" left="70.2%">slider</IndexItem>
-        <IndexItem top="64.4%" left="36.4%">scroll wheel</IndexItem>
-        <IndexItem top="64.4%" left="68%">slot machine</IndexItem>
+        <IndexItem top="23%" left="50.9%" dest="/clamp">clamp</IndexItem>
+        <IndexItem top="23%" left="70.2%" dest="/slider">slider</IndexItem>
+        <IndexItem top="64.4%" left="36.4%" dest="/scrollwheel">scroll wheel</IndexItem>
+        <IndexItem top="64.4%" left="68%" dest="/slot">slot machine</IndexItem>
       </Box>
     </Box>
   );
