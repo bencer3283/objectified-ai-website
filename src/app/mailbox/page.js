@@ -3,9 +3,44 @@
 import { Box, Text, VStack, Span } from "@chakra-ui/react";
 import Image from "next/image";
 
+const DetailSection = ({ imageSrc, alt, caption }) => {
+  return (
+    <Box 
+      position="absolute" 
+      my={"20vh"}
+      left="50%" 
+      transform="translateX(-50%)"
+      w="83.6vw" // 2140 / 2560
+    >
+      <Box position="relative" w="full" h="89vh">
+        <Image
+          src={imageSrc}
+          alt={alt}
+          fill
+          style={{ objectFit: 'cover' }}
+        />
+      </Box>
+      {caption && (
+        <Box bg="#434343" p="18px" w="full">
+          <Text
+            fontFamily="var(--font-ibm-plex-serif)"
+            fontWeight="regular"
+            fontSize={{ base: "12px", md: "15px", lg: "18px" }}
+            color="white"
+            lineHeight="normal"
+            whiteSpace="pre-wrap"
+          >
+            {caption}
+          </Text>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
 export default function Mailbox() {
   return (
-    <Box bg="white" minH="5000px" w="full" position="relative" color="black">
+    <Box bg="white" minH="6000px" w="full" position="relative" color="black">
       {/* Section 1: Hero */}
       <Box h="100vh" w="full" position="relative">
         <Box 
@@ -50,7 +85,7 @@ export default function Mailbox() {
         >
           <Box position="relative" w="full" h="full">
             <Image
-              src="/images/machine/DSc_3282.jpg"
+              src="/images/machine/DSC_3282.jpg"
               alt="Mailbox Hero"
               fill
               style={{ objectFit: 'contain' }}
@@ -60,43 +95,12 @@ export default function Mailbox() {
         </Box>
       </Box>
 
-      {/* Section 2: Image 1 */}
-      <Box 
-        position="absolute" 
-        top="1710px" 
-        left="50%" 
-        transform="translateX(-50%)"
-        w="83.6vw" // 2140 / 2560
-        h="1427px"
-      >
-        <Box position="relative" w="full" h="full">
-          <Image
-            src="/images/product-4.PNG"
-            alt="Mailbox Detail 1"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </Box>
-      </Box>
-
-      {/* Section 3: Image 2 */}
-      <Box 
-        position="absolute" 
-        top="3247px" 
-        left="50%" 
-        transform="translateX(-50%)"
-        w="83.6vw" // 2140 / 2560
-        h="1427px"
-      >
-        <Box position="relative" w="full" h="full">
-          <Image
-            src="/images/machine/DSC_3274.jpg"
-            alt="Mailbox Detail 2"
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </Box>
-      </Box>
+      {/* Section 2: Image 1 + Caption */}
+      <DetailSection 
+        imageSrc="/images/machine/DSC_3274.jpg"
+        alt="Mailbox Detail 1"
+        caption="the physical size limitation of the mailbox is an indication of the context window of LLMs"
+      />
     </Box>
   );
 }
