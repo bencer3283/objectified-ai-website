@@ -6,7 +6,7 @@ import Image from "next/image";
 const DetailSection = ({ imageSrc, alt, caption }) => {
   return (
     <Box 
-      position="absolute" 
+      position="relative" 
       my={"20vh"}
       left="50%" 
       transform="translateX(-50%)"
@@ -40,7 +40,7 @@ const DetailSection = ({ imageSrc, alt, caption }) => {
 
 export default function Mailbox() {
   return (
-    <Box bg="white" minH="6000px" w="full" position="relative" color="black">
+    <Box bg="white" minH="100vh" w="full" position="relative" color="black" paddingBottom={"20vh"}>
       {/* Section 1: Hero */}
       <Box h="100vh" w="full" position="relative">
         <Box 
@@ -94,6 +94,27 @@ export default function Mailbox() {
           </Box>
         </Box>
       </Box>
+
+    <Box 
+      position="relative" 
+      my={"20vh"}
+      left="50%" 
+      transform="translateX(-50%)"
+      w="83.6vw" // 2140 / 2560
+      h="89vh"
+    >
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/jovjSFKvUxI"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        style={{ borderRadius: "24px" }}
+      ></iframe>
+    </Box>
 
       {/* Section 2: Image 1 + Caption */}
       <DetailSection 
