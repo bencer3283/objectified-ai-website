@@ -8,12 +8,12 @@ const DetailSection = ({ imageSrc, alt, caption }) => {
   return (
     <Box 
       position="relative" 
-      my={"20vh"}
+      my={{ base: "8vh", md: "20vh" }}
       left="50%" 
       transform="translateX(-50%)"
-      w="83.6vw" // 2140 / 2560
+      w={{ base: "90vw", md: "83.6vw" }} // 2140 / 2560
     >
-      <Box position="relative" w="full" h="89vh">
+      <Box position="relative" w="full" h={{ base: "40vh", md: "89vh" }}>
         <Image
           src={imageSrc}
           alt={alt}
@@ -41,15 +41,16 @@ const DetailSection = ({ imageSrc, alt, caption }) => {
 
 export default function Mailbox() {
   return (
-    <Box bg="white" minH="100vh" w="full" position="relative" color="black" paddingBottom={"20vh"}>
+    <Box bg="white" minH="100vh" w="full" position="relative" color="black" paddingBottom={{ base: "10vh", md: "20vh" }}>
       {/* Section 1: Hero */}
-      <Box h="100vh" w="full" position="relative">
+      <Box h={{ base: "auto", md: "100vh" }} w="full" position="relative" pt={{ base: "120px", md: "0" }} pb={{ base: "40px", md: "0" }}>
         <Box 
-          position="absolute" 
-          top="50%" 
-          left="5.74%" // 147 / 2560
-          transform="translateY(-50%)"
-          w="42.6vw" // 1091 / 2560
+          position={{ base: "relative", md: "absolute" }} 
+          top={{ base: "auto", md: "50%" }} 
+          left={{ base: "5.74%", md: "5.74%" }} // 147 / 2560
+          transform={{ base: "none", md: "translateY(-50%)" }}
+          w={{ base: "90vw", md: "42.6vw" }} // 1091 / 2560
+          mb={{ base: "32px", md: "0" }}
           zIndex={10}
         >
           <VStack align="start" gap="48px">
@@ -78,12 +79,13 @@ export default function Mailbox() {
         </Box>
 
         <Box 
-          position="absolute" 
-          top="50%" 
-          left="40.27%" // 1031 / 2560
-          transform="translateY(-50%)"
-          w="54vw" // 1383 / 2560
-          h="58vh"
+          position={{ base: "relative", md: "absolute" }} 
+          top={{ base: "auto", md: "50%" }} 
+          left={{ base: "auto", md: "40.27%" }} // 1031 / 2560
+          transform={{ base: "none", md: "translateY(-50%)" }}
+          w={{ base: "90vw", md: "54vw" }} // 1383 / 2560
+          h={{ base: "40vh", md: "58vh" }}
+          mx={{ base: "auto", md: "0" }}
           zIndex={0}
         >
           <Box position="relative" w="full" h="full">
@@ -98,26 +100,27 @@ export default function Mailbox() {
         </Box>
       </Box>
 
-    <Box 
-      position="relative" 
-      my={"20vh"}
-      left="50%" 
-      transform="translateX(-50%)"
-      w="83.6vw" // 2140 / 2560
-      h="89vh"
-    >
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/qWVYRIToi2I"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-        style={{ borderRadius: "24px" }}
-      ></iframe>
-    </Box>
+      <Box 
+        position="relative" 
+        my={{ base: "8vh", md: "20vh" }}
+        left="50%" 
+        transform="translateX(-50%)"
+        w={{ base: "90vw", md: "83.6vw" }} // 2140 / 2560
+        h={{ base: "auto", md: "89vh" }}
+        aspectRatio={{ base: "16/9", md: "unset" }}
+      >
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/qWVYRIToi2I"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          style={{ borderRadius: "24px", aspectRatio: "16/9" }}
+        ></iframe>
+      </Box>
 
       {/* Section 2: Image 1 + Caption */}
       <DetailSection 

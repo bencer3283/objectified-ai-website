@@ -8,13 +8,19 @@ import MachineIndex from "@/components/MachineIndex";
 
 const Section = ({ title, body, opacity, y, top, left, width }) => {
   return (
-    <Box position="absolute" top={top} left={left} w={width} pointerEvents="none">
+    <Box 
+      position="absolute" 
+      top={{ base: "11vh", md: top }} 
+      left={left} 
+      w={width} 
+      pointerEvents="none"
+    >
       <motion.div style={{ opacity, y }}>
-        <VStack align="start" gap="84px">
+        <VStack align="start" gap={{ base: "16px", md: "48px", lg: "84px" }}>
           <Text
             fontFamily="var(--font-ibm-plex-mono)"
             fontWeight="semibold"
-            fontSize={{ base: "21px", md: "24px", lg: "36px" }}
+            fontSize={{ base: "18px", md: "24px", lg: "36px" }}
             color="black"
             lineHeight="1"
             textTransform="uppercase"
@@ -25,7 +31,7 @@ const Section = ({ title, body, opacity, y, top, left, width }) => {
           <Text
             fontFamily="var(--font-ibm-plex-serif)"
             fontWeight="regular"
-            fontSize={{ base: "15px", md: "18px", lg: "24px" }}
+            fontSize={{ base: "12px", sm: "14px", md: "18px", lg: "24px" }}
             color="black"
             lineHeight="normal"
             whiteSpace="pre-wrap"
@@ -64,11 +70,11 @@ export default function Home() {
         {/* Top Image */}
         <Box 
           position="absolute" 
-          top="96px" 
+          top={{ base: "80px", md: "96px" }} 
           left="50%" 
           transform="translateX(-50%)" 
-          w="75vw" 
-          h="70vh" 
+          w={{ base: "90vw", md: "75vw" }} 
+          h={{ base: "50vh", md: "70vh" }} 
           maxW="2140px"
           zIndex={0}
         >
@@ -84,11 +90,11 @@ export default function Home() {
         </Box>
 
         {/* Motto Text */}
-        <Box position="absolute" top="84vh" left="4.45%" w="90vw" zIndex={10}>
+        <Box position="absolute" top={{ base: "75vh", md: "84vh" }} left="4.45%" w="90vw" zIndex={10}>
           <Text
             fontFamily="var(--font-ibm-plex-mono)"
             fontWeight="semibold"
-            fontSize={{ base: "21px", md: "24px", lg: "36px" }}
+            fontSize={{ base: "18px", md: "24px", lg: "36px" }}
             color="black"
             lineHeight="1"
             textTransform="uppercase"

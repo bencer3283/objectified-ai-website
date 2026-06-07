@@ -14,7 +14,7 @@ const NavItem = ({ href, children }) => {
       asChild
       color="black"
       fontFamily="var(--font-ibm-plex-mono)"
-      fontSize="m"
+      fontSize={{ base: "xs", md: "m" }}
       fontWeight={"semibold"}
       textDecoration={isActive ? "underline" : "none"}
       _hover={{ textDecoration: "underline" }}
@@ -42,16 +42,16 @@ export const NavBar = () => {
       <Box
         bg="rgba(97,97,97,0.3)"
         backdropFilter="blur(10px)"
-        px={{ base: 6, lg: 16 }}
+        px={{ base: 3, md: 6, lg: 16 }}
         py={'1.5vh'}
         borderRadius="2xl"
         boxShadow="4px 4px 32px 0px rgba(0,0,0,0.25)"
       >
         <Flex
-          gap={{ base: 4, lg: 12 }}
+          gap={{ base: 3, md: 6, lg: 12 }}
           alignItems="center"
           justifyContent="center"
-          direction={{ base: "column", md: "row" }}
+          direction="row"
         >
           <NavItem href="/">synopsis</NavItem>
           
@@ -64,7 +64,7 @@ export const NavBar = () => {
             <Text
               color="black"
               fontFamily="var(--font-ibm-plex-mono)"
-              fontSize="m"
+              fontSize={{ base: "xs", md: "m" }}
               fontWeight={"semibold"}
               cursor="pointer"
               textDecoration={isMachineOpen ? "underline" : "none"}
@@ -87,11 +87,11 @@ export const NavBar = () => {
                   direction="column"
                   bg="rgba(97,97,97,0.8)"
                   backdropFilter="blur(10px)"
-                  px={8}
-                  py={4}
+                  px={{ base: 4, md: 8 }}
+                  py={{ base: 2, md: 4 }}
                   borderRadius="xl"
                   boxShadow="4px 4px 32px 0px rgba(0,0,0,0.25)"
-                  gap={4}
+                  gap={{ base: 2, md: 4 }}
                   alignItems="center"
                 >
                   <NavItem href="/mailbox">mailbox</NavItem>
@@ -113,7 +113,7 @@ export const NavBar = () => {
             <Text
               color="black"
               fontFamily="var(--font-ibm-plex-mono)"
-              fontSize="m"
+              fontSize={{ base: "xs", md: "m" }}
               fontWeight={"semibold"}
               cursor="pointer"
               textDecoration={isArchiveOpen ? "underline" : "none"}
@@ -136,11 +136,11 @@ export const NavBar = () => {
                   direction="column"
                   bg="rgba(97,97,97,0.8)"
                   backdropFilter="blur(10px)"
-                  px={8}
-                  py={4}
+                  px={{ base: 4, md: 8 }}
+                  py={{ base: 2, md: 4 }}
                   borderRadius="xl"
                   boxShadow="4px 4px 32px 0px rgba(0,0,0,0.25)"
-                  gap={4}
+                  gap={{ base: 2, md: 4 }}
                   alignItems="center"
                 >
                   <NavItem href="/synopsis">synopsis</NavItem>
@@ -154,7 +154,10 @@ export const NavBar = () => {
             )}
           </Box>
 
-          <NavItem href={'https://bencer3283.github.io/portfolio/thesis/'}>process documentation</NavItem>
+          <NavItem href={'https://bencer3283.github.io/portfolio/thesis/'}>
+            <Box as="span" display={{ base: "none", md: "inline" }}>process documentation</Box>
+            <Box as="span" display={{ base: "inline", md: "none" }}>process</Box>
+          </NavItem>
         </Flex>
       </Box>
     </Box>
